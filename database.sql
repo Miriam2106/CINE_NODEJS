@@ -2,13 +2,13 @@ CREATE DATABASE cine;
 USE cine;
 
 create table categoria(
-    id INT NOT NULL pelicula_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
     CONSTRAINT pk_categoria PRIMARY KEY (id)
 );
 
 create table pelicula(
-    id BIGINT NOT NULL pelicula_INCREMENT,
+    id BIGINT NOT NULL AUTO_INCREMENT,
     titulo VARCHAR(45) NOT NULL,
     descripcion TEXT NOT NULL,
     sinopsis TEXT NOT NULL,
