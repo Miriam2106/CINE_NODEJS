@@ -1,0 +1,22 @@
+CREATE DATABASE cine;
+USE cine;
+
+create table categoria(
+      id INT NOT NULL AUTO_INCREMENT,
+      nombre VARCHAR(45) NOT NULL,
+      CONSTRAINT pk_categoria PRIMARY KEY (id)
+);
+
+create table pelicula(
+     id BIGINT NOT NULL AUTO_INCREMENT,
+     titulo VARCHAR(45) NOT NULL,
+     descripcion TEXT NOT NULL,
+     sinopsis TEXT NOT NULL,
+     rating INT NOT NULL,
+     fecha_registro DATETIME NOT NULL,
+     fecha_actualizacion DATETIME NOT NULL,
+     estado TINYINT NOT NULL,
+     categoria INT NOT NULL,
+     CONSTRAINT pk_pelicula PRIMARY KEY (id),
+     CONSTRAINT categoria_fk_pelicula FOREIGN KEY (categoria) REFERENCES categoria (id)
+);
