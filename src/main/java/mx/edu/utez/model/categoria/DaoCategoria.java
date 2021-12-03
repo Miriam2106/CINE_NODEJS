@@ -62,7 +62,7 @@ public class DaoCategoria {
                 pstm = con.prepareStatement(query);
                 pstm.setString(1, categoria.getNombre());
             }else{
-                String query = "UPDATE pelicula SET nombre=? WHERE id = ?;";
+                String query = "UPDATE categoria SET nombre=? WHERE id = ?;";
                 pstm = con.prepareStatement(query);
                 pstm.setString(1, categoria.getNombre());
                 pstm.setInt(2, categoria.getId());
