@@ -28,10 +28,10 @@ public class ServicioPelicula {
     @Path("/save") //Registra
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes("application/x-www-form-urlencoded")
-    public Pelicula save(MultivaluedMap<String, String> formParams){
+    public String save(MultivaluedMap<String, String> formParams){
         int id = Integer.parseInt(formParams.get("id").get(0));
         if(new DaoPelicula().insertPelicula(getParams(formParams), true))
-            return new DaoPelicula().findPeliculaById(id);
+            return "exitoso";
         return null;
     }
 
