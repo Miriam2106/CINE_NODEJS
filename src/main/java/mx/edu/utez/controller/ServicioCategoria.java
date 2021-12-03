@@ -28,10 +28,10 @@ public class ServicioCategoria {
     @Path("/save") //Registra
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes("application/x-www-form-urlencoded")
-    public Categoria save(MultivaluedMap<String, String> formParams){
+    public String save(MultivaluedMap<String, String> formParams){
         int id = Integer.parseInt(formParams.get("id").get(0));
         if(new DaoCategoria().insertCategoria(getParams(formParams), true))
-            return new DaoCategoria().findCategoriaById(id);
+            return "exitoso";
         return null;
     }
 
