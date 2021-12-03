@@ -102,7 +102,7 @@ public class DaoPelicula {
         boolean state = false;
         try{
             con = ConnectionMySQL.getConnection();
-            String query = "delete from pelicula where id = ?;";
+            String query = "UPDATE pelicula SET estado = 0 WHERE id = ?;";
             pstm = con.prepareStatement(query);
             pstm.setInt(1, idPelicula);
             state = pstm.executeUpdate() == 1;
